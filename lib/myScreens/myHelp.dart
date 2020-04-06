@@ -228,8 +228,7 @@ class MoHW extends StatelessWidget {
                     TextStyle(fontWeight: FontWeight.w500, color: Colors.black),
               ),
               onTap: () async {
-                const url =
-                    'mailto:ncov2019@gov.in?subject=COVID-19%20Regd.';
+                const url = 'mailto:ncov2019@gov.in?subject=COVID-19%20Regd.';
                 if (await canLaunch(url)) {
                   await launch(url);
                 } else {
@@ -316,6 +315,11 @@ class _MoreHelplinesState extends State<MoreHelplines> {
                         margin:
                             EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                         child: ListTile(
+                          leading: Icon(
+                            Ionicons.ios_call,
+                            size: 30,
+                          ),
+                          trailing: Icon(Icons.arrow_forward_ios),
                           title: Text(
                               "${data['data']['contacts']['regional'][i]['loc'].toString()}"),
                           subtitle: Text(
@@ -325,6 +329,7 @@ class _MoreHelplinesState extends State<MoreHelplines> {
                               fontSize: 16,
                             ),
                           ),
+                          onTap: () {},
                         ),
                       );
                     },
