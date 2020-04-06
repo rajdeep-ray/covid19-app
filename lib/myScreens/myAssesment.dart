@@ -93,7 +93,7 @@ class _MyAssesmentState extends State<MyAssesment> {
   }
 }
 
-int _point = 4;
+int _point = 0;
 
 class MyQuiz extends StatefulWidget {
   @override
@@ -390,9 +390,9 @@ class _QuesFormat extends StatelessWidget {
                                       children: <Widget>[
                                         RaisedButton(
                                           onPressed: () {
-                                            --_point;
                                             Navigator.pushReplacementNamed(
                                                 context, _nav);
+                                            print(_point);
                                           },
                                           child: Text(
                                             "No",
@@ -409,6 +409,7 @@ class _QuesFormat extends StatelessWidget {
                                             ++_point;
                                             Navigator.pushReplacementNamed(
                                                 context, _nav);
+                                            print(_point);
                                           },
                                           child: Text(
                                             "Yes",
@@ -511,9 +512,9 @@ class QuesResult extends StatelessWidget {
                       padding: EdgeInsets.all(5),
                       child: Column(
                         children: <Widget>[
-                          _point > 8
+                          _point >= 4
                               ? _SuspectCard()
-                              : (_point > 5 ? _IsolateCard() : _SafeCard()),
+                              : (_point >=2 ? _IsolateCard() : _SafeCard()),
                           Padding(padding: EdgeInsets.all(5)),
                           Expanded(
                             child: ListView(
