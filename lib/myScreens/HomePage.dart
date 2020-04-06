@@ -13,10 +13,11 @@ class HomePage extends StatelessWidget {
         ),
         SafeArea(
           child: Column(
+            //crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height / 5, left: 20),
+                    top: MediaQuery.of(context).size.height / 6, left: 20),
                 child: ListTile(
                   title: Text(
                     "Hello",
@@ -31,6 +32,25 @@ class HomePage extends StatelessWidget {
                       color: Colors.white,
                       fontSize: 20,
                     ),
+                  ),
+                ),
+              ),
+              Padding(padding: EdgeInsets.all(20)),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: RichText(
+                  text: TextSpan(
+                    style: TextStyle(color: Colors.white, fontSize: 18),
+                    children: [
+                      TextSpan(text: "This "),
+                      TextSpan(
+                          text: "COVID-19 App",
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.w500)),
+                      TextSpan(
+                          text:
+                              " will help you stay updated with the current coronavirus stats in India and worldwide, helplines and test centers in each state. It also has a self-assessment and basic preventive measures."),
+                    ],
                   ),
                 ),
               ),
@@ -92,8 +112,8 @@ class HomePage extends StatelessWidget {
                         }
                       },
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top:10.0),
+                    /*Padding(
+                      padding: const EdgeInsets.only(top: 10.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
@@ -110,11 +130,29 @@ class HomePage extends StatelessWidget {
                           )
                         ],
                       ),
-                    )
+                    ),*/
+                    Padding(
+                      padding: EdgeInsets.all(10),
+                      child: RichText(
+                        text: TextSpan(
+                          style: TextStyle(color: Colors.white),
+                          children: [
+                            TextSpan(text: "Designed and Developed by\t"),
+                            TextSpan(
+                              text: "Rajdeep Ray",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
-              Padding(padding: EdgeInsets.all(10)),
+              Padding(padding: EdgeInsets.all(5)),
             ],
           ),
         ),

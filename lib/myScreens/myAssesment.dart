@@ -93,7 +93,7 @@ class _MyAssesmentState extends State<MyAssesment> {
   }
 }
 
-int _point = 0;
+int _point = 4;
 
 class MyQuiz extends StatefulWidget {
   @override
@@ -154,7 +154,8 @@ class _MyQuizState extends State<MyQuiz> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 5,left: 5,right: 5),
+                                  padding: const EdgeInsets.only(
+                                      top: 5, left: 5, right: 5),
                                   child: ListTile(
                                     title: Text(
                                       "\tDisclaimer!",
@@ -168,10 +169,8 @@ class _MyQuizState extends State<MyQuiz> {
                                   padding: const EdgeInsets.all(8.0),
                                   child: ListTile(
                                     title: Text(
-                                      "The purpose of this COVID-19 Self-Assesment is to help you make decisions about seeking appropriate medical care. This system is not intended for the diagnosis or treatment of disease or other conditions, including COVID-19",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 18),
+                                      "The purpose of this self-assessment is to help you make decisions about seeking appropriate medical care. This system is not intended for the diagnosis or treatment of disease or other conditions, including COVID-19.\n\nThis system does not replace the judgment of healthcare professionals or the performance of any clinical assessment.\n\nTo provide information on the right level of care, we are going to ask you a series of questions.",
+                                      style: TextStyle(fontSize: 18),
                                     ),
                                   ),
                                 ),
@@ -227,6 +226,7 @@ class _MyQuizState extends State<MyQuiz> {
                                                 context, '/ques1'),
                                       ),
                                     ),
+                                    
                                   ],
                                 ),
                               ],
@@ -355,7 +355,6 @@ class _QuesFormat extends StatelessWidget {
                                       title: Text(
                                         _str,
                                         style: TextStyle(
-                                          fontWeight: FontWeight.w500,
                                           fontSize: 18,
                                         ),
                                       ),
@@ -366,6 +365,7 @@ class _QuesFormat extends StatelessWidget {
                                       children: <Widget>[
                                         RaisedButton(
                                           onPressed: () {
+                                            --_point;
                                             Navigator.pushReplacementNamed(
                                                 context, _nav);
                                           },
@@ -427,43 +427,77 @@ class QuesResult extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: <Widget>[
-                  FlatButton(
-                    onPressed: () => Navigator.pop(context),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: <Widget>[
-                        Text(
-                          "Close",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600,
-                          ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      FlatButton(
+                        onPressed: () => Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (context) => MyQuiz())),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: <Widget>[
+                            Icon(
+                              Icons.refresh,
+                              color: Colors.white,
+                              size: 26,
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              "Again",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
                         ),
-                        SizedBox(
-                          width: 5,
+                      ),
+                      FlatButton(
+                        onPressed: () => Navigator.pop(context),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: <Widget>[
+                            Text(
+                              "Close",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Icon(
+                              Icons.close,
+                              color: Colors.white,
+                              size: 26,
+                            ),
+                          ],
                         ),
-                        Icon(
-                          Icons.close,
-                          color: Colors.white,
-                          size: 26,
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                   Expanded(
                     child: Padding(
                       padding: EdgeInsets.all(5),
                       child: Column(
                         children: <Widget>[
-                          _point < 3
-                              ? _SafeCard()
-                              : (_point < 5 ? _IsolateCard() : _SuspectCard()),
+                          _point > 8
+                              ? _SuspectCard()
+                              : (_point > 5 ? _IsolateCard() : _SafeCard()),
+                          Padding(padding: EdgeInsets.all(5)),
                           Expanded(
                             child: ListView(
                               children: <Widget>[
+                                Padding(padding: EdgeInsets.all(3)),
                                 NearHospital(),
+                                Padding(padding: EdgeInsets.all(3)),
                                 MoHW(),
+                                //Padding(padding: EdgeInsets.all(30))
                               ],
                             ),
                           ),
@@ -476,13 +510,6 @@ class QuesResult extends StatelessWidget {
             ),
           ),
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => MyQuiz())),
-        child: Icon(Icons.refresh),
-        backgroundColor: Colors.deepPurpleAccent,
-        hoverElevation: 50,
       ),
     );
   }
@@ -500,10 +527,20 @@ class _SafeCard extends StatelessWidget {
           children: <Widget>[
             ListTile(
               title: Text(
-                "Safe",
+                "You are Safe !",
                 style: TextStyle(
-                  fontSize: 20,
+                  color: Colors.deepOrange,
+                  fontSize: 25,
                   fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 15, left: 15, right: 15),
+              child: Text(
+                "Please stay indoors and if you come in contact with anyone infected please visit a doctor and follow the self-isolation.\n\n*This result is one basis of your response",
+                style: TextStyle(
+                  fontSize: 16,
                 ),
               ),
             ),
@@ -518,21 +555,30 @@ class _SuspectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      margin: EdgeInsets.all(5),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
       color: Colors.redAccent,
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(10),
         child: Column(
           children: <Widget>[
             ListTile(
               title: Text(
-                "Suspected",
+                "Suspected !",
                 style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white),
+                  fontSize: 25,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white,
+                ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 15, left: 15, right: 15),
+              child: Text(
+                "Immediate medical attention is needed. Tell the medical personal if you have been in contact with someone with COVID-19 or if you have recently been to an area where COVID-19 is spreading.\n\n*This result is one basis of your response",
+                style: TextStyle(color: Colors.white, fontSize: 16),
+              ),
+            )
           ],
         ),
       ),
@@ -552,11 +598,19 @@ class _IsolateCard extends StatelessWidget {
           children: <Widget>[
             ListTile(
               title: Text(
-                "Isolate yourself",
+                "Isolate yourself !",
                 style: TextStyle(
-                  fontSize: 20,
+                  color: Colors.deepOrangeAccent,
+                  fontSize: 25,
                   fontWeight: FontWeight.w500,
                 ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 15, left: 15, right: 15),
+              child: Text(
+                "Stay in your room except to get medical care. Cover your coughs and sneezes. Clean your hands often.\n\n*This result is one basis of your response",
+                style: TextStyle(fontSize: 16),
               ),
             ),
           ],
