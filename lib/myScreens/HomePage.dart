@@ -16,8 +16,9 @@ class HomePage extends StatelessWidget {
             //crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height / 6, left: 20),
+                /*padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height / 6, left: 20),*/
+                padding: EdgeInsets.only(top: 50, left: 20),
                 child: ListTile(
                   title: Text(
                     "Hello",
@@ -35,7 +36,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(padding: EdgeInsets.all(20)),
+              Padding(padding: EdgeInsets.all(15)),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: RichText(

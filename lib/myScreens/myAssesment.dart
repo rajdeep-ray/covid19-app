@@ -142,98 +142,123 @@ class _MyQuizState extends State<MyQuiz> {
                     ),
                   ),
                   Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Card(
-                          margin: EdgeInsets.all(10),
-                          child: Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      top: 5, left: 5, right: 5),
-                                  child: ListTile(
-                                    title: Text(
-                                      "\tDisclaimer!",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 25),
-                                    ),
-                                  ),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 5),
+                            child: ListTile(
+                              title: Text(
+                                "Self-Assesment",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 35,
+                                  fontWeight: FontWeight.w500,
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: ListTile(
-                                    title: Text(
-                                      "The purpose of this self-assessment is to help you make decisions about seeking appropriate medical care. This system is not intended for the diagnosis or treatment of disease or other conditions, including COVID-19.\n\nThis system does not replace the judgment of healthcare professionals or the performance of any clinical assessment.\n\nTo provide information on the right level of care, we are going to ask you a series of questions.",
-                                      style: TextStyle(fontSize: 18),
-                                    ),
-                                  ),
+                              ),
+                              subtitle: Text(
+                                "Check yourself",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
                                 ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: <Widget>[
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 10, horizontal: 20),
-                                      child: RaisedButton(
-                                        color: Colors.blueAccent,
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: <Widget>[
-                                            Text(
-                                              "I don't Agree",
-                                              style: TextStyle(
-                                                  color: Colors.white),
-                                            ),
-                                          ],
-                                        ),
-                                        onPressed: () => Navigator.pop(context),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 10, horizontal: 20),
-                                      child: RaisedButton(
-                                        color: Colors.blueAccent,
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: <Widget>[
-                                            Text(
-                                              "I Agree",
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 16,
-                                                  fontWeight: FontWeight.w500),
-                                            ),
-                                            Padding(padding: EdgeInsets.all(2)),
-                                            Icon(
-                                              Icons.arrow_forward_ios,
-                                              color: Colors.white,
-                                              size: 18,
-                                            )
-                                          ],
-                                        ),
-                                        onPressed: () =>
-                                            Navigator.pushReplacementNamed(
-                                                context, '/ques1'),
-                                      ),
-                                    ),
-                                    
-                                  ],
-                                ),
-                              ],
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                          Card(
+                            margin: EdgeInsets.all(10),
+                            child: Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 5, left: 5, right: 5),
+                                    child: ListTile(
+                                      title: Text(
+                                        "\tDisclaimer!",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 25),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: ListTile(
+                                      title: Text(
+                                        "The purpose of this self-assessment is to help you make decisions about seeking appropriate medical care. This system is not intended for the diagnosis or treatment of disease or other conditions, including COVID-19.\n\nThis system does not replace the judgment of healthcare professionals or the performance of any clinical assessment.\n\nTo provide information on the right level of care, we are going to ask you a series of questions.",
+                                        style: TextStyle(fontSize: 18),
+                                      ),
+                                    ),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 10, horizontal: 20),
+                                        child: RaisedButton(
+                                          color: Colors.blueAccent,
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: <Widget>[
+                                              Text(
+                                                "I don't Agree",
+                                                style: TextStyle(
+                                                    color: Colors.white),
+                                              ),
+                                            ],
+                                          ),
+                                          onPressed: () =>
+                                              Navigator.pop(context),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 10, horizontal: 20),
+                                        child: RaisedButton(
+                                          color: Colors.blueAccent,
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: <Widget>[
+                                              Text(
+                                                "I Agree",
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 16,
+                                                    fontWeight:
+                                                        FontWeight.w500),
+                                              ),
+                                              Padding(
+                                                  padding: EdgeInsets.all(2)),
+                                              Icon(
+                                                Icons.arrow_forward_ios,
+                                                color: Colors.white,
+                                                size: 18,
+                                              )
+                                            ],
+                                          ),
+                                          onPressed: () =>
+                                              Navigator.pushReplacementNamed(
+                                                  context, '/ques1'),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
