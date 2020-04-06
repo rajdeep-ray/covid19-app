@@ -45,7 +45,7 @@ class _MyHelpState extends State<MyHelp> {
                     ),
                   ),
                 ),
-                Padding(padding: EdgeInsets.all(10)),
+                Padding(padding: EdgeInsets.all(5)),
                 NearHospital(),
                 Padding(padding: EdgeInsets.all(5)),
                 MoHW(),
@@ -80,6 +80,33 @@ class _MyHelpState extends State<MyHelp> {
                         throw 'Could not launch $url';
                       }
                     },
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(10),
+                  child: RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(
+                      style: TextStyle(color: Colors.white),
+                      children: [
+                        TextSpan(text: "Designed and Developed by\t"),
+                        TextSpan(
+                          text: "\nRajdeep Ray",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        TextSpan(text: "\t&\t"),
+                        TextSpan(
+                          text: "Kritika Thakkar",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -153,7 +180,7 @@ class MoHW extends StatelessWidget {
               ),
               subtitle: Text("Toll-free Number"),
               onTap: () async {
-                const url = 'tel:+919633239042';
+                const url = 'tel:1075';
                 if (await canLaunch(url)) {
                   await launch(url);
                 } else {
@@ -177,7 +204,7 @@ class MoHW extends StatelessWidget {
                     TextStyle(fontWeight: FontWeight.w500, color: Colors.black),
               ),
               onTap: () async {
-                const url = 'tel:+919633239042';
+                const url = 'tel:+91-11-23978046';
                 if (await canLaunch(url)) {
                   await launch(url);
                 } else {
@@ -202,7 +229,7 @@ class MoHW extends StatelessWidget {
               ),
               onTap: () async {
                 const url =
-                    'mailto:rayrajdeep2001@gmail.com?subject=COVID-19%20Regd.';
+                    'mailto:ncov2019@gov.in?subject=COVID-19%20Regd.';
                 if (await canLaunch(url)) {
                   await launch(url);
                 } else {

@@ -132,24 +132,7 @@ class HomePage extends StatelessWidget {
                         ],
                       ),
                     ),*/
-                    Padding(
-                      padding: EdgeInsets.all(10),
-                      child: RichText(
-                        text: TextSpan(
-                          style: TextStyle(color: Colors.white),
-                          children: [
-                            TextSpan(text: "Designed and Developed by\t"),
-                            TextSpan(
-                              text: "Rajdeep Ray",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
+                    Padding(padding: EdgeInsets.all(10)),
                   ],
                 ),
               ),

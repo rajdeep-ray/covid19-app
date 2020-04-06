@@ -188,11 +188,11 @@ class _MyQuizState extends State<MyQuiz> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding: const EdgeInsets.only(left: 5,bottom: 8,right: 5),
                                     child: ListTile(
                                       title: Text(
                                         "The purpose of this self-assessment is to help you make decisions about seeking appropriate medical care. This system is not intended for the diagnosis or treatment of disease or other conditions, including COVID-19.\n\nThis system does not replace the judgment of healthcare professionals or the performance of any clinical assessment.\n\nTo provide information on the right level of care, we are going to ask you a series of questions.",
-                                        style: TextStyle(fontSize: 18),
+                                        style: TextStyle(fontSize: 16),
                                       ),
                                     ),
                                   ),
