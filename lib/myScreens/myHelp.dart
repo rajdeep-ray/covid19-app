@@ -180,11 +180,11 @@ class MoHW extends StatelessWidget {
               ),
               subtitle: Text("Toll-free Number"),
               onTap: () async {
-                const url = 'tel:1075';
-                if (await canLaunch(url)) {
-                  await launch(url);
+                const call = 'tel:1075';
+                if (await canLaunch(call)) {
+                  await launch(call);
                 } else {
-                  throw 'Could not launch $url';
+                  throw 'Could not launch $call';
                 }
               },
               trailing: Icon(Icons.arrow_forward_ios),
@@ -204,11 +204,11 @@ class MoHW extends StatelessWidget {
                     TextStyle(fontWeight: FontWeight.w500, color: Colors.black),
               ),
               onTap: () async {
-                const url = 'tel:+91-11-23978046';
-                if (await canLaunch(url)) {
-                  await launch(url);
+                const phoneNo = 'tel:+91-11-23978046';
+                if (await canLaunch(phoneNo)) {
+                  await launch(phoneNo);
                 } else {
-                  throw 'Could not launch $url';
+                  throw 'Could not launch $phoneNo';
                 }
               },
               trailing: Icon(Icons.arrow_forward_ios),
@@ -228,11 +228,11 @@ class MoHW extends StatelessWidget {
                     TextStyle(fontWeight: FontWeight.w500, color: Colors.black),
               ),
               onTap: () async {
-                const url = 'mailto:ncov2019@gov.in?subject=COVID-19%20Regd.';
-                if (await canLaunch(url)) {
-                  await launch(url);
+                const mailTo = 'mailto:ncov2019@gov.in?subject=COVID-19%20Regd.';
+                if (await canLaunch(mailTo)) {
+                  await launch(mailTo);
                 } else {
-                  throw 'Could not launch $url';
+                  throw 'Could not launch $mailTo';
                 }
               },
               trailing: Icon(Icons.arrow_forward_ios),
@@ -323,13 +323,20 @@ class _MoreHelplinesState extends State<MoreHelplines> {
                           title: Text(
                               "${data['data']['contacts']['regional'][i]['loc'].toString()}"),
                           subtitle: Text(
-                            "${data['data']['contacts']['regional'][i]['number'].toString()}",
+                            "${data['data']['contacts']['regional'][i]['number'].toString().split(',')[0]}",
                             style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: 16,
                             ),
                           ),
-                          onTap: () {},
+                          onTap: () async {
+                            String phoneNo = 'tel:${data['data']['contacts']['regional'][i]['number'].toString().split(',')[0]}';
+                            if (await canLaunch(phoneNo)) {
+                              await launch(phoneNo);
+                            } else {
+                              throw 'Could not launch $phoneNo';
+                            }
+                          },
                         ),
                       );
                     },
