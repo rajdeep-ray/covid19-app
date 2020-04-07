@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:covid_19/main.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
@@ -29,24 +30,7 @@ class _MyStatsState extends State<MyStats> {
   @override
   Widget build(BuildContext context) {
     if (data == null) {
-      return Container(
-        color: Colors.blueAccent,
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-              ),
-              Text(
-                "\nLoading..",
-                style: TextStyle(color: Colors.white, fontSize: 18),
-              )
-            ],
-          ),
-        ),
-      );
+      return MyLoadingScreen();
     }
     return Stack(
       children: <Widget>[
@@ -290,26 +274,7 @@ class _MyStatsGlobalState extends State<MyStatsGlobal> {
   @override
   Widget build(BuildContext context) {
     if (data == null) {
-      return Scaffold(
-        body: Container(
-          color: Colors.blueAccent,
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                ),
-                Text(
-                  "\nLoading..",
-                  style: TextStyle(color: Colors.white, fontSize: 18),
-                )
-              ],
-            ),
-          ),
-        ),
-      );
+      return MyLoadingScreen();
     }
     return Scaffold(
       body: Stack(

@@ -52,7 +52,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   final HomePage _homePage = new HomePage();
   final MyStats _myStats = new MyStats();
   final MyHelp _myHelp = new MyHelp();
@@ -128,3 +127,40 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+class MyLoadingScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        color: Colors.blueAccent,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+              ),
+              Text(
+                "\nLoading..",
+                style: TextStyle(color: Colors.white, fontSize: 18),
+              ),
+              /*OutlineButton(
+                textColor: Colors.white,
+                onPressed: () {},
+                child: Text("Cancel"),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                borderSide: BorderSide(
+                  width: 2.0,
+                  color: Colors.white,
+                ),
+              )*/
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:covid_19/main.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
@@ -273,30 +274,7 @@ class _MoreHelplinesState extends State<MoreHelplines> {
   @override
   Widget build(BuildContext context) {
     if (data == null) {
-      return Scaffold(
-        body: Stack(
-          children: <Widget>[
-            Container(
-              color: Colors.blueAccent,
-            ),
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  CircularProgressIndicator(
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                  ),
-                  Text(
-                    "\nLoading..",
-                    style: TextStyle(color: Colors.white, fontSize: 18),
-                  )
-                ],
-              ),
-            ),
-          ],
-        ),
-      );
+      return MyLoadingScreen();
     }
     return Scaffold(
       body: Stack(

@@ -81,52 +81,55 @@ class _MyDetailState extends State<MyDetail> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15.0)),
                 margin: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    ListTile(
-                      title: Text(
-                        data['data']['regional'][i]['loc'],
-                        style: TextStyle(
-                            fontSize: 23, fontWeight: FontWeight.w500),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      ListTile(
+                        title: Text(
+                          data['data']['regional'][i]['loc'],
+                          style: TextStyle(
+                              fontSize: 23, fontWeight: FontWeight.w500),
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          /*Text(
-                            "Total Confirmed Cases : ${int.parse(data['data']['regional'][i]['confirmedCasesIndian'].toString()) + int.parse(data['data']['regional'][i]['confirmedCasesForeign'].toString())}",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w600, fontSize: 16),
-                          ),*/
-                          RichText(
-                            text: TextSpan(
+                      Padding(
+                        padding: EdgeInsets.only(left: 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            /*Text(
+                              "Total Confirmed Cases : ${int.parse(data['data']['regional'][i]['confirmedCasesIndian'].toString()) + int.parse(data['data']['regional'][i]['confirmedCasesForeign'].toString())}",
                               style: TextStyle(
-                                  fontWeight: FontWeight.w600, fontSize: 16,color: Colors.black),
-                              children: [
-                                TextSpan(text: "Total Confirmed Cases :\t"),
-                                TextSpan(
-                                    text: "${int.parse(data['data']['regional'][i]['confirmedCasesIndian'].toString()) + int.parse(data['data']['regional'][i]['confirmedCasesForeign'].toString())}",
-                                    style: TextStyle(fontSize: 18)
-                                    ),
-                              ],
+                                  fontWeight: FontWeight.w600, fontSize: 16),
+                            ),*/
+                            RichText(
+                              text: TextSpan(
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600, fontSize: 16,color: Colors.black),
+                                children: [
+                                  TextSpan(text: "Total Confirmed Cases :\t"),
+                                  TextSpan(
+                                      text: "${int.parse(data['data']['regional'][i]['confirmedCasesIndian'].toString()) + int.parse(data['data']['regional'][i]['confirmedCasesForeign'].toString())}",
+                                      style: TextStyle(fontSize: 18)
+                                      ),
+                                ],
+                              ),
                             ),
-                          ),
-                          Text(
-                              "Confirmed Cases (Indian) : ${data['data']['regional'][i]['confirmedCasesIndian'].toString()}"),
-                          Text(
-                              "Confirmed cases (Foreign) : ${data['data']['regional'][i]['confirmedCasesForeign'].toString()}"),
-                          Text(
-                              "Discharged : ${data['data']['regional'][i]['discharged'].toString()}"),
-                          Text(
-                              "Deaths : ${data['data']['regional'][i]['deaths'].toString()}"),
-                        ],
+                            Text(
+                                "Confirmed Cases (Indian) : ${data['data']['regional'][i]['confirmedCasesIndian'].toString()}"),
+                            Text(
+                                "Confirmed cases (Foreign) : ${data['data']['regional'][i]['confirmedCasesForeign'].toString()}"),
+                            Text(
+                                "Discharged : ${data['data']['regional'][i]['discharged'].toString()}"),
+                            Text(
+                                "Deaths : ${data['data']['regional'][i]['deaths'].toString()}"),
+                          ],
+                        ),
                       ),
-                    ),
-                    Padding(padding: EdgeInsets.all(10))
-                  ],
+                      Padding(padding: EdgeInsets.all(10))
+                    ],
+                  ),
                 ),
               );
             },
