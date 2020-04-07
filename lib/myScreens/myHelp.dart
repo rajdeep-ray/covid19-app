@@ -50,6 +50,8 @@ class _MyHelpState extends State<MyHelp> {
                 Padding(padding: EdgeInsets.all(5)),
                 MoHW(),
                 Padding(padding: EdgeInsets.all(5)),
+                _MyTestCenters(),
+                Padding(padding: EdgeInsets.all(5)),
                 Card(
                   margin: EdgeInsets.all(5),
                   child: ListTile(
@@ -228,7 +230,8 @@ class MoHW extends StatelessWidget {
                     TextStyle(fontWeight: FontWeight.w500, color: Colors.black),
               ),
               onTap: () async {
-                const mailTo = 'mailto:ncov2019@gov.in?subject=COVID-19%20Regd.';
+                const mailTo =
+                    'mailto:ncov2019@gov.in?subject=COVID-19%20Regd.';
                 if (await canLaunch(mailTo)) {
                   await launch(mailTo);
                 } else {
@@ -330,7 +333,8 @@ class _MoreHelplinesState extends State<MoreHelplines> {
                             ),
                           ),
                           onTap: () async {
-                            String phoneNo = 'tel:${data['data']['contacts']['regional'][i]['number'].toString().split(',')[0]}';
+                            String phoneNo =
+                                'tel:${data['data']['contacts']['regional'][i]['number'].toString().split(',')[0]}';
                             if (await canLaunch(phoneNo)) {
                               await launch(phoneNo);
                             } else {
@@ -346,6 +350,24 @@ class _MoreHelplinesState extends State<MoreHelplines> {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _MyTestCenters extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: EdgeInsets.all(5),
+      child: ListTile(
+        leading: Icon(
+          MaterialCommunityIcons.hospital_building,
+          size: 30,
+        ),
+        title: Text("Test Centers"),
+        trailing: Icon(Icons.arrow_forward_ios),
+        onTap: ()=>Navigator.pushNamed(context, '/TestCenters'),
       ),
     );
   }

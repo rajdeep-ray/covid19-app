@@ -1,4 +1,3 @@
-//import 'package:covid_19/myServices/authservice.dart';
 import 'package:covid_19/myScreens/myAssesment.dart';
 import 'package:covid_19/myScreens/myInfo.dart';
 import 'package:covid_19/myScreens/testCenters.dart';
