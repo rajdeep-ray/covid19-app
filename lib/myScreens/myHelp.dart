@@ -50,7 +50,7 @@ class _MyHelpState extends State<MyHelp> {
                 Padding(padding: EdgeInsets.all(5)),
                 MoHW(),
                 Padding(padding: EdgeInsets.all(5)),
-                _MyTestCenters(),
+                AllMyTestCenters(),
                 Padding(padding: EdgeInsets.all(5)),
                 Card(
                   margin: EdgeInsets.all(5),
@@ -272,6 +272,32 @@ class _MoreHelplinesState extends State<MoreHelplines> {
 
   @override
   Widget build(BuildContext context) {
+    if (data == null) {
+      return Scaffold(
+        body: Stack(
+          children: <Widget>[
+            Container(
+              color: Colors.blueAccent,
+            ),
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                  ),
+                  Text(
+                    "\nLoading..",
+                    style: TextStyle(color: Colors.white, fontSize: 18),
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    }
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -355,7 +381,7 @@ class _MoreHelplinesState extends State<MoreHelplines> {
   }
 }
 
-class _MyTestCenters extends StatelessWidget {
+class AllMyTestCenters extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(

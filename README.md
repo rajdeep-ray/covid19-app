@@ -2,6 +2,19 @@
 
 This app will help you stay updated with the current coronavirus stats in India and worldwide, helplines and test centers in each state. It also has a self-assessment and basic preventive measures.
 
+## Hardware and Software requirements
+
+Reqirement for the app are as follows
+
+* Android Mobile Phone
+* Atleast 2GB RAM
+* `Mobile OS` : **Android** Jelly Bean or **newer**
+* `Mobile hardware` : **ARM Android devices**.
+
+## Process Flow
+
+## Data Flow Diagram
+
 ## APIs
 
 The following APIs have been used in the App

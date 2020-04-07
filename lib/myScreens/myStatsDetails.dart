@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:http/http.dart' as http;
 
 class MyDetail extends StatefulWidget {
@@ -95,10 +96,23 @@ class _MyDetailState extends State<MyDetail> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text(
+                          /*Text(
                             "Total Confirmed Cases : ${int.parse(data['data']['regional'][i]['confirmedCasesIndian'].toString()) + int.parse(data['data']['regional'][i]['confirmedCasesForeign'].toString())}",
                             style: TextStyle(
                                 fontWeight: FontWeight.w600, fontSize: 16),
+                          ),*/
+                          RichText(
+                            text: TextSpan(
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600, fontSize: 16,color: Colors.black),
+                              children: [
+                                TextSpan(text: "Total Confirmed Cases :\t"),
+                                TextSpan(
+                                    text: "${int.parse(data['data']['regional'][i]['confirmedCasesIndian'].toString()) + int.parse(data['data']['regional'][i]['confirmedCasesForeign'].toString())}",
+                                    style: TextStyle(fontSize: 18)
+                                    ),
+                              ],
+                            ),
                           ),
                           Text(
                               "Confirmed Cases (Indian) : ${data['data']['regional'][i]['confirmedCasesIndian'].toString()}"),
@@ -216,34 +230,81 @@ class _MyDetailGlobalState extends State<MyDetailGlobal> {
                       print(i);
                       return Card(
                         margin: EdgeInsets.all(5),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            ListTile(
-                              title: Text(
-                                data['data'][i]['location'].toString(),
-                                style: TextStyle(
-                                    fontSize: 23, fontWeight: FontWeight.w500),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 20),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              ListTile(
+                                trailing: Icon(
+                                  Ionicons.md_globe,
+                                  size: 40,
+                                ),
+                                title: Text(
+                                  data['data'][i]['location'].toString(),
+                                  style: TextStyle(
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.w500),
+                                ),
                               ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 20),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text(
-                                    "Confirmed Cases : ${data['data'][i]['confirmed'].toString()}",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 16),
-                                  ),
-                                  Text(
-                                      "Deaths : ${data['data'][i]['deaths'].toString()}")
-                                ],
+                              Padding(
+                                padding: EdgeInsets.only(left: 20),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    RichText(
+                                      text: TextSpan(
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 16,
+                                        ),
+                                        children: [
+                                          TextSpan(text: "Confirmed Cases :\t"),
+                                          TextSpan(
+                                            text:
+                                                "${data['data'][i]['confirmed'].toString()}",
+                                            style: TextStyle(
+                                              color: Colors.deepPurpleAccent,
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 16,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    /*Text(
+                                      "Confirmed Cases : ${data['data'][i]['confirmed'].toString()}",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 16),
+                                    ),*/
+                                    RichText(
+                                      text: TextSpan(
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 16,
+                                        ),
+                                        children: [
+                                          TextSpan(text: "Deaths :\t"),
+                                          TextSpan(
+                                            text:
+                                                "${data['data'][i]['deaths'].toString()}",
+                                            style: TextStyle(
+                                                color: Colors.redAccent),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    /*Text(
+                                        "Deaths : ${data['data'][i]['deaths'].toString()}")*/
+                                  ],
+                                ),
                               ),
-                            ),
-                            Padding(padding: EdgeInsets.all(8))
-                          ],
+                              Padding(padding: EdgeInsets.all(8))
+                            ],
+                          ),
                         ),
                       );
                     },

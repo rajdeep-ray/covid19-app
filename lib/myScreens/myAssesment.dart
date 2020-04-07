@@ -522,6 +522,8 @@ class QuesResult extends StatelessWidget {
                                 Padding(padding: EdgeInsets.all(3)),
                                 NearHospital(),
                                 Padding(padding: EdgeInsets.all(3)),
+                                AllMyTestCenters(),
+                                Padding(padding: EdgeInsets.all(3)),
                                 MoHW(),
                                 //Padding(padding: EdgeInsets.all(30))
                               ],
