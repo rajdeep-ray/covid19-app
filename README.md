@@ -1,6 +1,6 @@
 # COVID-19-App
 
-My COVID-19 Flutter project(APP).
+My COVID-19 Flutter project(App).
 
 ## Getting Started
 
