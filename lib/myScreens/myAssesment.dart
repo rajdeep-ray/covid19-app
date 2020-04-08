@@ -555,7 +555,7 @@ class _SafeCard extends StatelessWidget {
           children: <Widget>[
             ListTile(
               title: Text(
-                "You are Safe !",
+                "You are Safe!",
                 style: TextStyle(
                   color: Colors.deepOrange,
                   fontSize: 25,
@@ -592,7 +592,7 @@ class _SuspectCard extends StatelessWidget {
           children: <Widget>[
             ListTile(
               title: Text(
-                "Suspected !",
+                "Suspected!",
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.w500,
@@ -605,6 +605,7 @@ class _SuspectCard extends StatelessWidget {
               child: Text(
                 "Immediate medical attention is needed. Tell the medical personal if you have been in contact with someone with COVID-19 or if you have recently been to an area where COVID-19 is spreading.\n\n*This result is one basis of your response",
                 style: TextStyle(color: Colors.white, fontSize: 16),
+                
               ),
             )
           ],
@@ -626,7 +627,7 @@ class _IsolateCard extends StatelessWidget {
           children: <Widget>[
             ListTile(
               title: Text(
-                "Isolate yourself !",
+                "Isolate yourself!",
                 style: TextStyle(
                   color: Colors.deepOrangeAccent,
                   fontSize: 25,
