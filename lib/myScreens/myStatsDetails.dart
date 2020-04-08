@@ -98,32 +98,86 @@ class _MyDetailState extends State<MyDetail> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            /*Text(
-                              "Total Confirmed Cases : ${int.parse(data['data']['regional'][i]['confirmedCasesIndian'].toString()) + int.parse(data['data']['regional'][i]['confirmedCasesForeign'].toString())}",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w600, fontSize: 16),
-                            ),*/
                             RichText(
                               text: TextSpan(
                                 style: TextStyle(
-                                    fontWeight: FontWeight.w600, fontSize: 16,color: Colors.black),
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 16,
+                                    color: Colors.black),
                                 children: [
                                   TextSpan(text: "Total Confirmed Cases :\t"),
                                   TextSpan(
-                                      text: "${int.parse(data['data']['regional'][i]['confirmedCasesIndian'].toString()) + int.parse(data['data']['regional'][i]['confirmedCasesForeign'].toString())}",
-                                      style: TextStyle(fontSize: 18)
-                                      ),
+                                      text:
+                                          "${int.parse(data['data']['regional'][i]['confirmedCasesIndian'].toString()) + int.parse(data['data']['regional'][i]['confirmedCasesForeign'].toString())}",
+                                      style: TextStyle(fontSize: 18)),
                                 ],
                               ),
                             ),
-                            Text(
-                                "Confirmed Cases (Indian) : ${data['data']['regional'][i]['confirmedCasesIndian'].toString()}"),
-                            Text(
-                                "Confirmed cases (Foreign) : ${data['data']['regional'][i]['confirmedCasesForeign'].toString()}"),
-                            Text(
-                                "Discharged : ${data['data']['regional'][i]['discharged'].toString()}"),
-                            Text(
-                                "Deaths : ${data['data']['regional'][i]['deaths'].toString()}"),
+                            RichText(
+                              text: TextSpan(
+                                style: TextStyle(color: Colors.black),
+                                children: [
+                                  TextSpan(
+                                      text: "Confirmed Cases (Indian) :\t"),
+                                  TextSpan(
+                                      text:
+                                          "${data['data']['regional'][i]['confirmedCasesIndian'].toString()}",
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.indigoAccent)),
+                                ],
+                              ),
+                            ),
+                            RichText(
+                              text: TextSpan(
+                                style: TextStyle(color: Colors.black),
+                                children: [
+                                  TextSpan(
+                                      text: "Confirmed cases (Foreign) :\t"),
+                                  TextSpan(
+                                      text:
+                                          "${data['data']['regional'][i]['confirmedCasesForeign'].toString()}",
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.deepOrangeAccent)),
+                                ],
+                              ),
+                            ),
+                            RichText(
+                              text: TextSpan(
+                                style: TextStyle(color: Colors.black),
+                                children: [
+                                  TextSpan(text: "Discharged :\t"),
+                                  TextSpan(
+                                      text:
+                                          "${data['data']['regional'][i]['discharged'].toString()}",
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.teal)),
+                                ],
+                              ),
+                            ),
+                            RichText(
+                              text: TextSpan(
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 15),
+                                children: [
+                                  TextSpan(text: "Deaths :\t"),
+                                  TextSpan(
+                                      text:
+                                          "${data['data']['regional'][i]['deaths'].toString()}",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w700,
+                                          color: Colors.redAccent)),
+                                ],
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -230,9 +284,10 @@ class _MyDetailGlobalState extends State<MyDetailGlobal> {
                   child: ListView.builder(
                     itemCount: data == null ? 0 : data['data'].length,
                     itemBuilder: (BuildContext context, i) {
-                      print(i);
+                      //print(i);
                       return Card(
-                        margin: EdgeInsets.all(5),
+                        margin:
+                            EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                         child: Padding(
                           padding: const EdgeInsets.only(left: 20),
                           child: Column(
@@ -276,12 +331,6 @@ class _MyDetailGlobalState extends State<MyDetailGlobal> {
                                         ],
                                       ),
                                     ),
-                                    /*Text(
-                                      "Confirmed Cases : ${data['data'][i]['confirmed'].toString()}",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 16),
-                                    ),*/
                                     RichText(
                                       text: TextSpan(
                                         style: TextStyle(
@@ -300,8 +349,6 @@ class _MyDetailGlobalState extends State<MyDetailGlobal> {
                                         ],
                                       ),
                                     ),
-                                    /*Text(
-                                        "Deaths : ${data['data'][i]['deaths'].toString()}")*/
                                   ],
                                 ),
                               ),

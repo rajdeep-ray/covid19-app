@@ -113,25 +113,6 @@ class HomePage extends StatelessWidget {
                         }
                       },
                     ),
-                    /*Padding(
-                      padding: const EdgeInsets.only(top: 10.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Text(
-                            "Designed and Developed by\t",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          Text(
-                            "Rajdeep Ray",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),*/
                     Padding(padding: EdgeInsets.all(10)),
                   ],
                 ),
@@ -164,7 +145,6 @@ class _MyCarouselBodyInlink extends StatelessWidget {
               ListTile(
                 title: Text(_title),
                 subtitle: Text(_subtitle),
-                //onTap: ()=>print("object"),
               ),
               Expanded(
                 child: Row(
