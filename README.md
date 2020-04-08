@@ -19,7 +19,7 @@ Reqirement for the app are as follows
 
 ## Process Flow and Data Flow Diagram
 
-![FlowDiagram](https://github.com/Rajdeep-Ray/COVID-19-App/blob/master/myMockups/flowdiagram.PNG)
+![FlowDiagram](https://github.com/Rajdeep-Ray/COVID-19-App/blob/master/myMockups/flowdiagram.png)
 
 ## APIs
 
