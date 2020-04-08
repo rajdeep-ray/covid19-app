@@ -4,7 +4,7 @@ This app will help you stay updated with the current coronavirus stats in India 
 
 ## Preview
 
-![MockUp1](https://drive.google.com/open?id=1wd85w_QtNKHBYc2-j68cDrjwMMhUQDSs)
+![MockUp1](https://github.com/Rajdeep-Ray/COVID-19-App/blob/master/Mockups/Mockup1.PNG)
 
 ## Hardware and Software requirements
 
