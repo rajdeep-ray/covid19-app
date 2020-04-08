@@ -2,6 +2,10 @@
 
 This app will help you stay updated with the current coronavirus stats in India and worldwide, helplines and test centers in each state. It also has a self-assessment and basic preventive measures.
 
+## Preview
+
+![MockUp1](https://drive.google.com/open?id=1wd85w_QtNKHBYc2-j68cDrjwMMhUQDSs)
+
 ## Hardware and Software requirements
 
 Reqirement for the app are as follows
