@@ -17,9 +17,9 @@ Reqirement for the app are as follows
 * `Mobile OS` : **Android** Jelly Bean or **newer**
 * `Mobile hardware` : **ARM Android devices**.
 
-## Process Flow
+## Process Flow and Data Flow Diagram
 
-## Data Flow Diagram
+![FlowDiagram](https://github.com/Rajdeep-Ray/COVID-19-App/blob/master/myMockups/flowdiagram.PNG)
 
 ## APIs
 
