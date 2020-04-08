@@ -312,7 +312,7 @@ class Ques6 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _QuesFormat(
-        "Do you have symptoms like cough, fever and bluish lips?", '/ques7');
+        "Do you have symptoms like dry cough, fever or difficulty in breathing?", '/ques7');
   }
 }
 
