@@ -10,8 +10,7 @@ This app will help you stay updated with the current coronavirus stats in India 
 
 ## Hardware and Software requirements
 
-### This App has been made using
-  'Flutter'
+### This App has been made using `Flutter`
 
 Reqirement for the app are as follows
 
