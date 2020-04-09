@@ -145,18 +145,6 @@ class MyLoadingScreen extends StatelessWidget {
                 "\nLoading..",
                 style: TextStyle(color: Colors.white, fontSize: 18),
               ),
-              /*OutlineButton(
-                textColor: Colors.white,
-                onPressed: () {},
-                child: Text("Cancel"),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-                borderSide: BorderSide(
-                  width: 2.0,
-                  color: Colors.white,
-                ),
-              )*/
             ],
           ),
         ),
