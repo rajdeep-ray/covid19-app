@@ -1,6 +1,6 @@
 # COVID-19-App
 
-This app will help you stay updated with the current coronavirus stats in India and worldwide, helplines and test centers in each state. It also has a self-assessment and basic preventive measures.
+This will help you stay updated with the current Corona virus count in India and across the world. It also includes a self-assessment with helplines and test centers in each state and basic preventive measures
 
 ## Preview
 
