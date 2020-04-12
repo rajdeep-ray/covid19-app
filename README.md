@@ -2,6 +2,8 @@
 
 This will help you stay updated with the current Corona virus count in India and across the world. It also includes a self-assessment with helplines and test centers in each state and basic preventive measures
 
+**[e-Yantra Hackathon 2020 - COVID-19 App - Demonstration](https://youtu.be/v-sRNVLDz3k)**
+
 **[Video Demonstration](https://youtu.be/mwbOuzhrOaA)**
 
 ## Preview
