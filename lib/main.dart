@@ -19,9 +19,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         appBarTheme: AppBarTheme(
           color: Colors.blueAccent,
-          textTheme: TextTheme(
-            title: TextStyle(color: Colors.white),
-          ),
         ),
       ),
       debugShowCheckedModeBanner: false,
