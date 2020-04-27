@@ -100,14 +100,14 @@ class _MyHelpState extends State<MyHelp> {
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        TextSpan(text: "\t&\t"),
-                        TextSpan(
-                          text: "Kritika Thakkar",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
+                        // TextSpan(text: "\t&\t"),
+                        // TextSpan(
+                        //   text: "Kritika Thakkar",
+                        //   style: TextStyle(
+                        //     color: Colors.white,
+                        //     fontWeight: FontWeight.w500,
+                        //   ),
+                        // ),
                       ],
                     ),
                   ),
