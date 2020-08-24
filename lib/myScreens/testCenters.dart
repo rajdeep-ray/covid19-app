@@ -99,6 +99,7 @@ class _MyFireStoreState extends State<MyFireStore> {
                   }
                   return Container();*/
                   //print(document.documentID);
+                  print("demo");
                   return _MyCard(document['state'], document.documentID);
                 },
               ).toList(),
