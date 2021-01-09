@@ -63,7 +63,7 @@ class HomePage extends StatelessWidget {
                           .collection("myCarousel")
                           .snapshots(),
                       builder: (BuildContext context,
-                          AsyncSnapshot<QuerySnapshot> snapshot) {
+                          AsyncSnapshot snapshot) {
                         if (snapshot.hasError)
                           return new Text('Error: ${snapshot.error}');
                         switch (snapshot.connectionState) {

@@ -82,7 +82,7 @@ class _MyFireStoreState extends State<MyFireStore> {
           .collection("TestCenters")
           .orderBy('state', descending: false)
           .snapshots(),
-      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
         if (snapshot.hasError) return new Text('Error: ${snapshot.error}');
         switch (snapshot.connectionState) {
           case ConnectionState.waiting:
@@ -223,7 +223,7 @@ class InStateDetail extends StatelessWidget {
           .collection('inState')
           .orderBy('loc', descending: false)
           .snapshots(),
-      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
         if (snapshot.hasError) return new Text('Error: ${snapshot.error}');
         switch (snapshot.connectionState) {
           case ConnectionState.waiting:
